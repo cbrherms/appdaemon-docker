@@ -2,6 +2,20 @@ FROM python:3.6
 
 MAINTAINER mezz64 <jtmihalic@gmail.com>
 
+LABEL org.freenas.autostart="true" \
+      org.freenas.version="latest-beta" \
+      org.freenas.expose-ports-at-host="true" \
+      org.freenas.web-ui-protocol="http" \
+      org.freenas.web-ui-port=5050 \
+      org.freenas.web-ui-path="" \
+      org.freenas.port-mappings="5050:5050/tcp" \
+      org.freenas.volumes="[ \
+          { \
+              \"name\": \"/conf\", \
+              \"descr\": \"HADashboard config\" \
+          } \
+      ]"
+
 RUN apt-get update && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 

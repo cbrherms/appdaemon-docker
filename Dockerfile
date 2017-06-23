@@ -34,4 +34,4 @@ RUN git clone -b hadashboard_beta https://github.com/home-assistant/appdaemon.gi
 
 RUN pip3 install .
 
-CMD [ "appdaemon", "-c", "/conf" ]
+CMD [ "appdaemon", "-c", "/conf", "--commtype", "SSE" ]
